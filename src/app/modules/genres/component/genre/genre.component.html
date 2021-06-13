@@ -1,0 +1,8 @@
+<button (click)="show()" (dblclick)="hide()" >{{genre.name}}</button><hr/>
+<div *ngIf="bool === true">
+<div *ngFor="let movie of moviesG">
+  <div *ngFor="let m of movie.genre_ids">
+<app-movie-g *ngIf="genre.id === m"   [movie]="movie"></app-movie-g>
+  </div>
+</div>
+</div>

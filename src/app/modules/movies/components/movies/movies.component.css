@@ -1,0 +1,7 @@
+.box{
+  display: flex;
+}
+.inBox{
+  width: 50%;
+  border: 2px solid darkblue;
+}
