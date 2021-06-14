@@ -24,8 +24,11 @@ export class MoviesComponent implements OnInit {
 this.MovieInfa = movie
   }
   Next(){
-    if(this.page < 10){
+    if(this.page < 9){
       this.page += 1
+      if(this.page === 4 || this.page === 7){
+        this.page += 1
+      }
       this.movieService.getMovies(this.page).subscribe(value => {this.movies = value.results})
       console.log(this.page);
     }
@@ -33,6 +36,9 @@ this.MovieInfa = movie
   Before(){
      if(this.page > 2){
       this.page -= 1
+       if(this.page === 4 || this.page === 7){
+         this.page -= 1
+       }
       this.movieService.getMovies(this.page).subscribe(value => {this.movies = value.results})
     }
   }

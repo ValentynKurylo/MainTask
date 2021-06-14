@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { GenresRoutingModule } from './genres-routing.module';
 import { GenresComponent } from './component/genres/genres.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {GenresService} from "./service/genres.service";
 import { GenreComponent } from './component/genre/genre.component';
 import { MoviesGComponent } from './component/movies-g/movies-g.component';
 import { MovieGComponent } from './component/movie-g/movie-g.component';
+import {CustomInterseptorService} from "../movies/service/custom-interseptor.service";
 
 
 
@@ -23,6 +24,10 @@ import { MovieGComponent } from './component/movie-g/movie-g.component';
     GenresRoutingModule,
     HttpClientModule
   ],
-  providers: [GenresService]
+  providers: [GenresService,
+  {provide: HTTP_INTERCEPTORS,
+     useClass: CustomInterseptorService,
+     multi: true}
+     ]
 })
 export class GenresModule { }
