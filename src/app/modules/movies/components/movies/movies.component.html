@@ -2,9 +2,11 @@
   <div class="inBox"><app-movie *ngFor="let result of movies" [result]="result" (liftMovie)="liftMovie($event)">
  </app-movie> </div>
   <div class="inBox">
-    {{MovieInfa?.description}}
+    {{MovieInfa?.description}} <br/>
   </div>
 </div>
 <button (click)="Next()">Next Page</button>
 <button (click)="Before()">Before Page</button>
+
+
 

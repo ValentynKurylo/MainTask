@@ -14,6 +14,7 @@ export class MovieComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(typeof this.movie.backdrop_path);
   }
 
 }
